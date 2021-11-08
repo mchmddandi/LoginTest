@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553981742738F4E7007A93FE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 553981732738F4E7007A93FE /* .swiftlint.yml */; };
 		55E0778D27315B6D00BE908B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0778C27315B6D00BE908B /* AppDelegate.swift */; };
 		55E0778F27315B6D00BE908B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0778E27315B6D00BE908B /* SceneDelegate.swift */; };
 		55E0779127315B6D00BE908B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E0779027315B6D00BE908B /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553981732738F4E7007A93FE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		55E0778927315B6D00BE908B /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E0778C27315B6D00BE908B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55E0778E27315B6D00BE908B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		55E0778027315B6D00BE908B = {
 			isa = PBXGroup;
 			children = (
+				553981732738F4E7007A93FE /* .swiftlint.yml */,
 				55E0778B27315B6D00BE908B /* NewsApp */,
 				55E0778A27315B6D00BE908B /* Products */,
 			);
@@ -77,6 +80,7 @@
 				55E0778527315B6D00BE908B /* Sources */,
 				55E0778627315B6D00BE908B /* Frameworks */,
 				55E0778727315B6D00BE908B /* Resources */,
+				553981722738E4CA007A93FE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -125,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553981742738F4E7007A93FE /* .swiftlint.yml in Resources */,
 				55E0779927315B6F00BE908B /* LaunchScreen.storyboard in Resources */,
 				55E0779627315B6F00BE908B /* Assets.xcassets in Resources */,
 				55E0779427315B6D00BE908B /* Main.storyboard in Resources */,
@@ -132,6 +137,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		553981722738E4CA007A93FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55E0778527315B6D00BE908B /* Sources */ = {
@@ -297,6 +322,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +351,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
